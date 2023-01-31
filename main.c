@@ -116,6 +116,3 @@ int main() {
 
     return 0;
 }
-
-//Noch zu machen:
-//check nach niemand hat gewonnen
