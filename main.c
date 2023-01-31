@@ -67,34 +67,48 @@ char checkWin() {
 
 
 int main() {
-
-
      //Spiel Start
     int turn = 0;
     int run = 1;
     printField();
 
-    //
+
+    //Spiel loop startet hier
     while(run = 1) {
 
+        //Player1 darf setzen
         playerTurn('X');
         printField();
         turn++;
 
+        //Check Player1 gewinnt
         if (checkWin() == 'X') {
             printf("Player X gewinnt!\n");
             run = 0;
             break;
         }
 
+        //Schauen ob ein Unentschieden ist
+        if(turn == 9) {
+            printf("Unentschieden!\n");
+            break;
+        }
 
+        //Player2 darf setzen
         playerTurn('O');
         printField();
         turn++;
 
+        //Check Player2 gewinnt
         if (checkWin() == 'O') {
             printf("Player O gewinnt!\n");
             run = 0;
+            break;
+        }
+
+        //Schauen ob ein Unterschied ist
+        if(turn == 9) {
+            printf("Unentschieden!\n");
             break;
         }
 
@@ -103,5 +117,5 @@ int main() {
     return 0;
 }
 
-//Noch zu machen
+//Noch zu machen:
 //check nach niemand hat gewonnen
